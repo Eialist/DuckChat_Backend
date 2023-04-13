@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DuckChat</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.min.js"
+      integrity="sha512-AI5A3zIoeRSEEX9z3Vyir8NqSMC1pY7r5h2cE+9J6FLsoEmSSGLFaqMQw8SWvoONXogkfFrkQiJfLeHLz3+HOg=="
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css" />
+    <script src="client.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header><h1>DuckChat</h1></header>
+    <p class="chatroom-field"></p>
+    <div class="login-container">
+      <h2>Login</h2>
+      <div>
+        <label>Username</label>
+        <input class="username-field" type="text" />
+      </div>
+      <div>
+        <label>Password</label>
+        <input class="password-field" type="password" />
+      </div>
+
+      <button class="login-btn">Login</button>
+      <button onclick="location.href='register.html'" class="register-btn">
+        Register new user
+      </button>
+      <p class="server-info"></p>
+    </div>
+
+    <div class="broadcast-container"><p class="emergency-broadcast"></p></div>
+    <div class="container">
+      <label for="message" class="emergency-msg-label"
+        >Send Broadcast Message</label
+      >
+      <input type="text" class="emergency-msg" />
+      <button class="emergency-btn" onClick="sendMessage()">Send Alert</button>
+    </div>
+
+    <div>
+      <ul class="chat-message-field"></ul>
+    </div>
+  </body>
+</html>
