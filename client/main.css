@@ -1,11 +1,10 @@
-* {
+/* * {
     margin: 0; 
     padding: 0; 
 }
 
 body, html {
-    width: 100%; 
-    height: 100vh; 
+    width: 100%;  
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -75,6 +74,17 @@ button {
     padding: 2em; 
 }
 
+.time, 
+.sender,
+.message {
+    list-style: none;
+    margin: 1em; 
+}
+
+li {
+    padding: 1em; 
+}
+
 @keyframes slide-in {
     from {
         transform: translateX(-50%);
@@ -82,4 +92,4 @@ button {
     to {
         transform: translateX(70%);
     }
-}
+} */

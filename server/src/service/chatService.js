@@ -34,9 +34,9 @@ export function deleteChannel(channelId) {
 
 export function createMessage(channelId, message) {
     const data = {
+      date: new Date(),
       sender: message.sender,
       content: message.content,
-      date: new Date(),
     };
     console.log(data);
     console.log(channelId);

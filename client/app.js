@@ -14,19 +14,8 @@ const EMERGENCY_BROADCAST_URL = "http://127.0.0.1:6060/ducks/api/broadcast";
 const MUSIC_CHAT_CHANNEL_URL = "http://127.0.0.1:6060/ducks/api/channel/2";
 
 async function fetchChannels() {
-    const authorizationToken = sessionStorage.getItem("x-auth-token");
-
-    if(authorizationToken == undefined) {
-        console.log("No auth token found");
-        return false; 
-    }
-
-    
     const fetchOption= {
         method: "GET",
-        headers: {
-            "Authorization": "Bearer " + authorizationToken,
-        }
     }
 
     const response = await fetch(ALL_CHANNELS_URL, fetchOption);
@@ -62,13 +51,9 @@ async function handleLogin() {
     const response = await fetch(LOGIN_URL, fetchOption);
     console.log(response);
     const authorizationToken = await response.text();
-    console.log(authorizationToken);
 
     sessionStorage.setItem("x-auth-token", authorizationToken);
-
     fetchMusicChannel();
-
-    serverInfo.textContent = "You are logged in!";
 }
 
 
@@ -96,7 +81,10 @@ async function fetchMusicChannel() {
     for (let i = 0; i < data.length; i++) {
         let newData = data[i];
         console.log(newData);
-        chatMessageField.textContent += " " + JSON.stringify(newData);
+        const ul = document.querySelector("ul");
+        const li = document.createElement("li");
+        li.textContent += JSON.stringify(newData);
+        ul.append(li);
     }
 }
 

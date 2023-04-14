@@ -9,7 +9,7 @@ function generate(username, role) {
     let payloadOptions = {
       issuer: "Ducks-Chat-App",
       subject: "send and receive access token",
-      expiresIn: "2h" // 15 minutes
+      expiresIn: "15m" // 15 minutes
     }
   
     // private claims (custom payload)
